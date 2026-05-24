@@ -2058,3 +2058,25 @@ body.is-mobile .particle {
 body.is-mobile .scanlines {
   opacity: 0.25;
 }
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .main-title {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.04em !important;
+    margin-bottom: 12px;
+    text-align: center;
+    word-break: break-word;
+    padding: 0 10px;
+  }
+
+  .main-title.glitch::before,
+  .main-title.glitch::after {
+    display: none !important;
+  }
+
+}
