@@ -2,7 +2,13 @@
 
 Cyberpunk academic survival OS — multi-page edition.
 
-## Run
+## Live site (subdomain)
+
+**https://reva.saisanithreddy.online** — main portfolio stays at **saisanithreddy.online**
+
+Setup & DNS fix: see **[HOSTING.md](HOSTING.md)**
+
+## Run locally
 
 Open **`index.html`** in your browser.
 
