@@ -121,7 +121,9 @@ function initMatrix() {
 function initParticles() {
   const container = $('#particles');
   if (!container) return;
-  for (let i = 0; i < 35; i++) {
+  const isMobile = document.body.classList.contains('is-mobile');
+  const count = isMobile ? 12 : 35;
+  for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
     p.className = 'particle';
     p.style.left = `${Math.random() * 100}%`;
@@ -420,10 +422,21 @@ function ensureOverlays() {
   }
 }
 
+function initMobileOptimizations() {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches
+    || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  if (isMobile) document.body.classList.add('is-mobile');
+}
+
 function initCore() {
   ensureOverlays();
+  initMobileOptimizations();
   initMatrix();
   initParticles();
+
+  document.querySelectorAll('button, .module-card, .nav-home').forEach((el) => {
+    el.style.touchAction = 'manipulation';
+  });
   initSessionId();
   initTerminal();
   initKonami();
