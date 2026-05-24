@@ -186,6 +186,63 @@ On your main site (`saisanithreddy.online`), add a button:
 
 ---
 
+---
+
+# Fix “Not secure” in the browser
+
+Browsers show **Not secure** when the page loads over **HTTP** (no padlock), or when **HTTPS certificate** is not ready yet.
+
+### Always open with HTTPS
+
+Use this exact URL (note the **s**):
+
+```text
+https://reva.saisanithreddy.online
+```
+
+Not `http://reva.saisanithreddy.online`
+
+### Step 1 — GitHub Pages: certificate + Enforce HTTPS
+
+1. **https://github.com/sanithreddy06/reva_survival** → **Settings** → **Pages**
+2. **Custom domain** must be: `reva.saisanithreddy.online` (DNS check green)
+3. Wait until you see: **“Your site is live at https://reva.saisanithreddy.online”**
+4. Enable **Enforce HTTPS** (checkbox)
+
+If **Enforce HTTPS** is greyed out:
+
+- Wait **15 minutes to 24 hours** after DNS first verified (GitHub must issue a free certificate)
+- Click **Check again** on the custom domain
+- Make sure `CNAME` in the repo is `reva.saisanithreddy.online`
+
+### Step 2 — Cloudflare SSL (if you use orange cloud)
+
+1. **Cloudflare** → **saisanithreddy.online** → **SSL/TLS**
+2. Set encryption mode to **Full** (not “Flexible” if GitHub serves HTTPS)
+3. For `reva` record: **DNS only** (grey cloud) is simplest — GitHub handles HTTPS
+
+Optional: **SSL/TLS** → **Edge Certificates** → turn on **Always Use HTTPS**
+
+That redirects `http://` → `https://` at Cloudflare.
+
+### Step 3 — On your phone / PC
+
+- Clear cache or try **incognito**
+- Type `https://` manually or use a bookmark with `https://`
+- After GitHub enables HTTPS, the padlock should appear
+
+### What each message means
+
+| What you see | Meaning |
+|--------------|---------|
+| **Not secure** (grey, address bar) | Site opened on **HTTP** — use `https://` or enable Enforce HTTPS |
+| **Your connection is not private** (big warning) | Certificate not issued yet or wrong DNS — wait or fix Cloudflare/GitHub |
+| Padlock | HTTPS working |
+
+The site code also redirects `http://` → `https://` once the certificate exists.
+
+---
+
 ## Want a different subdomain?
 
 Examples: `survival.saisanithreddy.online`, `toolkit.saisanithreddy.online`

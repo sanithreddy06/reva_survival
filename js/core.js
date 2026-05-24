@@ -428,7 +428,15 @@ function initMobileOptimizations() {
   if (isMobile) document.body.classList.add('is-mobile');
 }
 
+function enforceHttps() {
+  const host = location.hostname;
+  if (location.protocol === 'http:' && (host.endsWith('saisanithreddy.online') || host.endsWith('github.io'))) {
+    location.replace(`https://${host}${location.pathname}${location.search}${location.hash}`);
+  }
+}
+
 function initCore() {
+  enforceHttps();
   ensureOverlays();
   initMobileOptimizations();
   initMatrix();
