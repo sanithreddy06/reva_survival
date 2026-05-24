@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internal Marks — REVA Survival</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-tool" data-page="internals">
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div id="particles" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="surveillance-bar"><span class="blink">●</span> SURVEILLANCE — <span id="session-id">REVA-????</span></div>
+
+  <nav class="page-nav">
+    <a href="index.html" class="nav-home"><span data-icon="home" class="nav-icon"></span> HOME</a>
+    <span class="nav-divider">/</span>
+    <span class="nav-current"><span data-icon="clipboard" class="nav-icon"></span> Internal Marks</span>
+  </nav>
+
+  <main class="page-main">
+    <section class="card glass page-card">
+      <div class="card-header">
+        <span class="card-icon-wrap icon-purple" data-icon="clipboard"></span>
+        <h1>Internal Marks Predictor</h1>
+        <span class="card-tag">PROPHECY</span>
+      </div>
+      <div class="card-body">
+        <p class="marks-info">Total = <strong>100</strong> · IA-1 + IA-2 + Assignment = <strong>50</strong> · Semester End = <strong>50</strong> · Pass = <strong>40</strong></p>
+        <div class="input-grid cols-2">
+          <label>IA-1 Marks <span class="max-hint">/ 20</span>
+            <input type="number" id="ia1" min="0" max="20" step="0.5" value="14" />
+          </label>
+          <label>IA-2 Marks <span class="max-hint">/ 20</span>
+            <input type="number" id="ia2" min="0" max="20" step="0.5" value="16" />
+          </label>
+          <label>Assignment Marks <span class="max-hint">/ 10</span>
+            <input type="number" id="assign-marks" min="0" max="10" step="0.5" value="7" />
+          </label>
+          <label>Semester End (optional) <span class="max-hint">/ 50</span>
+            <input type="number" id="semester-marks" min="0" max="50" step="0.5" placeholder="Leave blank if not yet" />
+          </label>
+        </div>
+        <button class="btn-neon" id="predict-internals">CONSULT THE ORACLE</button>
+        <div class="results hidden" id="internals-results">
+          <div class="result-big" id="internal-total">37/50</div>
+          <p class="result-detail">Internal component (IA + Assignment)</p>
+          <p class="min-marks-box">Minimum needed in <strong>Semester End Exam</strong>: <span class="highlight" id="min-semester">3</span> / 50</p>
+          <p class="result-detail" id="total-line">Total score: — / 100</p>
+          <p>Status: <strong id="pass-status">PENDING SEMESTER</strong></p>
+          <p>Emotional Damage: <strong id="emotional-damage">MODERATE</strong></p>
+          <p class="funny-out" id="internals-funny"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p><a href="index.html">← Back to Command Center</a></p></footer>
+  <script src="js/icons.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/internals.js"></script>
+</body>
+</html>

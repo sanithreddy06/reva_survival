@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Survival Dashboard — REVA Survival</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-tool" data-page="dashboard">
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div id="particles" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="surveillance-bar"><span class="blink">●</span> SURVEILLANCE — <span id="session-id">REVA-????</span></div>
+
+  <nav class="page-nav">
+    <a href="index.html" class="nav-home"><span data-icon="home" class="nav-icon"></span> HOME</a>
+    <span class="nav-divider">/</span>
+    <span class="nav-current"><span data-icon="radar" class="nav-icon"></span> Survival Dashboard</span>
+  </nav>
+
+  <main class="page-main">
+    <section class="card glass page-card page-card-wide">
+      <div class="card-header">
+        <span class="card-icon-wrap icon-purple" data-icon="radar"></span>
+        <h1>Semester Survival Dashboard</h1>
+        <span class="card-tag">LIVE</span>
+      </div>
+      <div class="card-body">
+        <div class="dashboard-grid">
+          <div class="dash-stat">
+            <span class="dash-label">Days Until Exams</span>
+            <input type="number" id="days-exams" min="0" value="14" class="dash-input" />
+            <span class="dash-value" id="dash-exams">14</span>
+          </div>
+          <div class="dash-stat">
+            <span class="dash-label">Assignment Load</span>
+            <input type="range" id="assignment-load" min="0" max="100" value="65" />
+            <div class="mini-bar"><div id="assign-bar" style="width:65%"></div></div>
+          </div>
+          <div class="dash-stat">
+            <span class="dash-label">Attendance Risk</span>
+            <input type="range" id="attendance-risk" min="0" max="100" value="40" />
+            <div class="mini-bar danger-bar-mini"><div id="attend-risk-bar" style="width:40%"></div></div>
+          </div>
+          <div class="dash-stat">
+            <span class="dash-label">Mental Stability</span>
+            <input type="range" id="mental-stability" min="0" max="100" value="28" />
+            <div class="mini-bar mental-bar"><div id="mental-bar" style="width:28%"></div></div>
+          </div>
+          <div class="dash-stat">
+            <span class="dash-label">Sleep (hrs/night)</span>
+            <input type="number" id="sleep-hours-dash" min="0" max="24" step="0.5" value="3.5" />
+            <span class="dash-status" id="sleep-status">CRITICAL</span>
+          </div>
+        </div>
+        <button class="btn-neon btn-small" id="refresh-dashboard">REFRESH TELEMETRY</button>
+        <p class="dash-verdict" id="dash-verdict">Semester status: Barely holding together.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p><a href="index.html">← Back to Command Center</a></p></footer>
+  <script src="js/icons.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REVA SURVIVAL TOOLKIT — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-home">
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div id="particles" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div class="surveillance-bar">
+    <span class="blink">●</span> AI SURVEILLANCE ACTIVE — SESSION: <span id="session-id">REVA-????</span>
+  </div>
+
+  <header class="hero hero-home">
+    <div class="hero-glow"></div>
+    <div class="status-bar">
+      <div class="status-item">
+        <span class="status-label">Students Panicking</span>
+        <span class="status-value" id="panic-count">847</span>
+        <span class="status-trend up">▲ LIVE</span>
+      </div>
+      <div class="status-item unstable">
+        <span class="status-label">System Stability</span>
+        <span class="status-value" id="stability">12%</span>
+        <span class="pulse-dot"></span>
+      </div>
+      <div class="status-item threat">
+        <span class="status-label">Academic Threat</span>
+        <span class="status-value defcon" id="threat-level">DEFCON 3</span>
+      </div>
+    </div>
+
+    <h1 class="main-title glitch" data-text="REVA SURVIVAL TOOLKIT">REVA SURVIVAL TOOLKIT</h1>
+    <p class="subtitle">Engineered for academically endangered students.</p>
+    <p class="rotating-msg" id="rotating-msg">Detected zero preparation.</p>
+
+    <div class="loading-bar-container">
+      <div class="loading-label">Booting Academic OS...</div>
+      <div class="loading-bar"><div class="loading-fill" id="boot-bar"></div></div>
+      <span class="loading-text" id="loading-text">Injecting caffeine drivers...</span>
+    </div>
+  </header>
+
+  <main class="hub-main">
+    <h2 class="hub-title">SELECT SURVIVAL MODULE</h2>
+    <p class="hub-sub">Pick your poison. Each tool lives on its own page — no infinite scroll of doom.</p>
+
+    <div class="module-grid">
+      <a href="attendance.html" class="module-card">
+        <span class="module-icon icon-cyan" data-icon="chart"></span>
+        <span class="module-name">Attendance Damage</span>
+        <span class="module-desc">DEFCON meter & safe bunk calculator</span>
+        <span class="module-tag">CRITICAL</span>
+      </a>
+      <a href="cooked.html" class="module-card">
+        <span class="module-icon icon-hot" data-icon="flame"></span>
+        <span class="module-name">How Cooked Are You?</span>
+        <span class="module-desc">Thermal scan & survival probability</span>
+        <span class="module-tag hot">THERMAL</span>
+      </a>
+      <a href="internals.html" class="module-card">
+        <span class="module-icon icon-purple" data-icon="clipboard"></span>
+        <span class="module-name">Internal Marks Predictor</span>
+        <span class="module-desc">Oracle of emotional damage</span>
+        <span class="module-tag">PROPHECY</span>
+      </a>
+      <a href="panic.html" class="module-card module-danger">
+        <span class="module-icon icon-red" data-icon="alert"></span>
+        <span class="module-name">Exam Panic Mode</span>
+        <span class="module-desc">Red alert. Sirens. Regret.</span>
+        <span class="module-tag danger">EMERGENCY</span>
+      </a>
+      <a href="proxy.html" class="module-card">
+        <span class="module-icon icon-cyan" data-icon="mask"></span>
+        <span class="module-name">Proxy Simulator</span>
+        <span class="module-desc">Stealth risk analysis</span>
+        <span class="module-tag">STEALTH</span>
+      </a>
+      <a href="dashboard.html" class="module-card">
+        <span class="module-icon icon-purple" data-icon="radar"></span>
+        <span class="module-name">Survival Dashboard</span>
+        <span class="module-desc">Semester telemetry & mental bar</span>
+        <span class="module-tag">LIVE</span>
+      </a>
+      <a href="bunk.html" class="module-card">
+        <span class="module-icon icon-cyan" data-icon="run"></span>
+        <span class="module-name">Bunk Planner</span>
+        <span class="module-desc">Strategic escape routes</span>
+        <span class="module-tag">TACTICAL</span>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>REVA Survival Toolkit v0.69 — Built on caffeine and denial</p>
+    <p class="easter-hint">Press <kbd>`</kbd> terminal • <kbd>Ctrl+Shift+H</kbd> hack • Konami code</p>
+  </footer>
+
+  <script src="js/icons.js"></script>
+  <script src="js/core.js"></script>
+</body>
+</html>
